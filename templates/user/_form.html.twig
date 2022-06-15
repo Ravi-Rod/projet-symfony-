@@ -1,0 +1,35 @@
+{{ form_start(form) }}
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <div class="form-floating mb-3 mb-md-0">{{ form_widget(form.nom, {'attr':{'class':"form-control"}}) }}
+                    <label for="inputFirstName">Nom</label>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-floating mb-3 mb-md-0">{{ form_widget(form.prenom, {'attr':{'class':"form-control"}}) }}
+                    <label for="inputFirstName">Prénom</label>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <div class="form-floating mb-3 mb-md-0">{{ form_widget(form.email, {'attr':{'class':"form-control"}}) }}
+                    <label for="inputFirstName">Email</label>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-floating mb-3 mb-md-0">{{ form_widget(form.password, {'attr':{'class':"form-control"}}) }}
+                    <label for="inputFirstName">Mot de passe</label>
+            </div>
+        </div>
+    </div>
+     <div class="row mb-3">
+        <div class="form-floating mb-3 mb-md-0">{{ form_widget(form.roles, {'attr':{'class':"form-control"}}) }}
+        </div>
+     </div>
+        <div class="mt-4 mb-0">
+            <div class="d-grid">
+    <button id="valid" class="btn btn-primary btn-block" type="submit">{{ button_label|default('Ajouter') }}</button>
+        </div>
+        </div>
+{{ form_end(form) }}

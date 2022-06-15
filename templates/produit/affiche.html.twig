@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}produit{% endblock %}
+
+{% block body %}
+    <h1>Produits</h1>
+
+<table class="table">
+         <thead>
+            <tr>
+                <th>Id</th>
+                <th>Libellé</th>
+                <th>Quantité</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for produit in produits%}
+            <tr>
+                <td>{{ produit.id }}</td>
+                <td>
+                    <a style="color:black; text-decoration:none" href="{{ asset('produit/'~ produit.id ~'/edit') }}">{{ produit.libelle }}</a>
+                </td>
+                <td>{{ produit.stock }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a style="color:black; text-decoration:none" href="{{ path('app_produit_index') }}">back to list</a>
+{% endblock %}

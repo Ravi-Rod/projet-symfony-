@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}utilisateurs{% endblock %}
+
+{% block body %}
+    <h1>Utilisateurs</h1>
+
+<table class="table">
+         <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Email</th>
+                <th>Roles</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users%}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>
+                    <a style="color:black; text-decoration:none" href="{{ asset('user/'~ user.id ~'/edit') }}">{{ user.Nom }}</a>
+                </td>
+                <td>{{ user.prenom }}</td>
+                <td>{{ user.email }}</td>
+                <td>
+                  {% for role in user.roles %}
+                    {{ role.nom }}
+                  {% endfor %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a style="color:black; text-decoration:none" href="{{ path('app_user_index') }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,30 @@
+{{ form_start(form) }}
+     <div class="row mb-3">
+        <div class="col-md-6">
+            <div class="form-floating mb-3 mb-md-0">{{ form_widget(form.produit, {'attr':{'class':"form-control"}}) }}
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-floating mb-3 mb-md-0">{{ form_widget(form.quantite, {'attr':{'class':"form-control"}}) }}
+                <label for="inputLastName">Quantité</label>
+            </div>
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-6">
+            <div class="form-floating">{{ form_widget(form.prix, {'attr':{'class':"form-control"}}) }}
+                <label for="inputPassword">Prix de gros</label>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-control">{{ form_widget(form.date) }}
+                {# <label for="inputPasswordConfirm">Date</label> #}
+            </div>
+        </div>
+    </div>
+    <div class="mt-4 mb-0">
+        <div class="d-grid">
+         <button class="btn btn btn-primary btn-block">{{ button_label|default('Ajouter') }}</button>
+         </div>
+    </div>
+{{ form_end(form) }}
